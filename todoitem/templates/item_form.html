@@ -12,7 +12,7 @@
     <form method = "POST">
         {% csrf_token %}
         
-        {{ form }}
+        {{ form }} <!--form is been called from return render(request, "item_form.html", { 'form': form }) in the views.py file within the add and edit function-->
         <button type = "submit">Save</button>
     </form>
 </body>
