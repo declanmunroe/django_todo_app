@@ -43,4 +43,7 @@ def toggle_item(request, id):
         
     return redirect(get_index)
     
+def get_login(request):
+    return render(request, "login.html")
+    
     

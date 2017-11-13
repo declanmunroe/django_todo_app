@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from todoitem.views import get_index, add_item, edit_item, toggle_item
+from todoitem.views import get_index, add_item, edit_item, toggle_item, get_login
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -24,4 +24,5 @@ urlpatterns = [
     url(r"^edit/(\d+)$", edit_item), #^means the url must begin with edit. $ means it must end with the last character before the doller sign. \d+ means one or more digit after the edit. We use this to access the many different id numbers.
                                             #(?P<id>\d+) the brackets creates a group for the numbers \d+    ?P<id> puts the number ie \d+ into a variable called id. Can also be written like this (\d+)
     url(r"^toggle/(\d+)$", toggle_item), # r"^toggle/(\d+)$ toggle is one argument and (\d+) is the second argument
+    url(r"^login$", get_login),
 ]

@@ -13,6 +13,11 @@ class TestViews(TestCase):
         page = self.client.get('/add')
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "item_form.html")
+        
+    def test_get_login_page(self):
+        page = self.client.get('/login')
+        self.assertEqual(page.status_code, 200)
+        self.assertTemplateUsed(page, "login.html")
 
 
     def test_get_edit_item_page(self):
